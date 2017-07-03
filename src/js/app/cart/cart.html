@@ -1,0 +1,43 @@
+<div class="component">
+    <div class="container">
+        <div class="row">
+            <h2 class="c-title wow fadeInDown">Cart</h2>
+            <div class="item-container wow fadeInUp">
+                <div class="big-item">
+                    <div class="selected-list" ng-if="$ctrl.selectedData.length > 0">
+                        <div>
+                            <div class="col-sm-4">
+                                <p class="c-text">Name</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="c-text">Ingredients</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="c-text">Price</p>
+                            </div>
+                        </div>
+                        <div class="selected-element" ng-repeat="element in $ctrl.selectedData">
+                            <div class="col-sm-4">
+                                <p class="c-text">{{$index + 1}}. {{element.name}}</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="c-text" ng-repeat="ingredient in element.ingredients">{{ingredient}}</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="c-text">{{element.price | currency}}</p>
+                            </div>
+                            <button class="c-close" ng-click="$ctrl.removeElement(element, $index)">&times;</button>
+                        </div>
+                        <div class="total-block">
+                            <p class="c-price">Total price: {{$ctrl.selectedPrice | currency}}</p>
+                            <button class="c-btn" ng-click="$ctrl.submitOrder()">Submit</button>
+                        </div>
+                    </div>
+                    <div ng-if="$ctrl.selectedData.length === 0">
+                        <p class="c-text">Nothing selected yet, please choose from the <a class="c-link" ui-sref="main">Main</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

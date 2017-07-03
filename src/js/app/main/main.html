@@ -1,0 +1,31 @@
+<div class="component">
+    <div class="container">
+        <div class="row">
+            <h2 class="c-title wow fadeInDown">MENU</h2>
+
+            <div class="modification">
+                <div class="mod-block wow fadeInLeft">
+                    <p class="c-text">Search</p>
+                    <input type="text" ng-model="$ctrl.search.name" class="c-input">
+                </div>
+                <div class="mod-block wow fadeInRight">
+                    <p class="c-text">Sort by price</p>
+                    <input type="checkbox" class="c-input" ng-click="$ctrl.sortByPrice()">
+                </div>
+            </div>
+
+            <div class="items wow fadeInUp">
+                <div class="item" ng-repeat="item in $ctrl.data | filter : $ctrl.search | orderBy: $ctrl.price">
+                    <i class="item__icon"></i>
+                    <p class="item__txt"> {{item.id}}. Name: {{item.name}}  </p>
+                    <p class="item__txt">Ingredients: <span ng-repeat="ingredient in item.ingredients">{{ingredient}} </span> </p>
+                    <p class="item__txt price">Price: <span>{{item.price | currency}}</span></p>
+                    <button class="c-btn" ng-click="$ctrl.addToCart($index, item)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notification" ng-class="{'active': $ctrl.notification === true}">
+        Item was successfully added!
+    </div>
+</div>

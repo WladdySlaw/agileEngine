@@ -1,0 +1,35 @@
+{
+  "name": "punk",
+  "version": "0.0.1",
+  "description": "cms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vladyslavYefimenko",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2",
+    "html-loader": "^0.4.4",
+    "install": "^0.8.2",
+    "nodemon": "^1.11.0",
+    "npm": "^3.10.9",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "express": "^4.14.0",
+    "compression": "^1.6.2",
+    "install": "^0.8.2",
+    "webpack": "^1.13.2"
+  }
+}

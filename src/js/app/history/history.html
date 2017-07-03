@@ -1,0 +1,27 @@
+<div class="component">
+    <div class="container">
+        <div class="row">
+            <h2 class="c-title wow fadeInDown">History</h2>
+            <div class="item-container wow fadeInUp">
+                <div class="long-item">
+                    <div ng-if="$ctrl.orders.length === 0" class="empty-block">
+                        <p class="c-text">Your history is empty, try to place an order on the <a class="c-link" ui-sref="cart">Cart</a></p>
+                    </div>
+                    <div class="history-list" ng-if="$ctrl.orders.length > 0"
+                        <div class="history-item" ng-repeat="item in $ctrl.orders">
+                            <p class="c-text">{{$index + 1}}. Date: {{item.date | date : 'dd-MM-yyyy HH:mm:ss'}}</p>
+                            <div ng-repeat="order in item.elements" class="order">
+                                <p class="c-text">{{$index + 1}}. Name: {{order.name}},</p>
+                                <p class="c-text">
+                                    Ingredients: <span ng-repeat="ingredient in order.ingredients">{{ingredient}}, </span>
+                                </p>
+                                <p class="c-price">Price: {{order.price | currency}}</p>
+                            </div>
+                            <p class="c-price total">Total Price: {{item.price | currency}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

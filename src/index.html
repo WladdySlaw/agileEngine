@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="agileEngine" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AgileEngine</title>
+    <base href="/">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="js/vendor/animate.css">
+</head>
+
+
+<body ng-controller="mainController">
+    <nav class="app-nav">
+        <ul class="nav-list">
+            <li class="nav-list__item" ui-sref="main" ui-sref-active="active">Main</li>
+            <li class="nav-list__item" ui-sref="cart" ui-sref-active="active">Cart</li>
+            <li class="nav-list__item" ui-sref="history" ui-sref-active="active">History</li>
+        </ul>
+    </nav>
+    <ui-view></ui-view>
+<script src="js/vendor/jquery2.0.0.min.js"></script>
+<script src="js/vendor/slick.min.js"></script>
+<script src="js/bundle.js"></script>
+<script src="js/vendor/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>
+</html>
